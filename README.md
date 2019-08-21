@@ -1,19 +1,24 @@
 ## Unit Testing Assignment
 
-by Bill Gates.
+by Thanida Jongarnon.
 
 
 ## Test Cases for unique
 
-Write a table describing your test cases.
 
 | Test case              |  Expected Result    |
 |------------------------|---------------------|
 | empty list             |  empty list         |
 | one item               |  list with 1 item   |
-| one item many times    |  list with 1 item   |
-| 2 items, many times, many orders | 2 item list, items in same order  |
-| what other test case?  |  what result?       |
-
+| one item with duplication    |  list with 1 item   |
+| 2 items               |  list with 2 items   |
+| 2 items, with duplication, many orders | 2 item list, items in same order  |
+| multiple items         |  list with multiple items   |
+| multiple items, with duplication, many orders        |  multiple items list, items in same order   |
+| list with one nested list               | list with one nested list   |
+| list with one nested list with duplication              | list with one nested list   |
+| list with multiple nested lists           | list with multiple nested lists  |
+| list with multiple nested lists with duplication         | list with multiple nested lists  |
+| argument not a list        |  throws exception|
 
 ## Test Cases for Fraction
