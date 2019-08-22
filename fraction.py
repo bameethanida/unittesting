@@ -14,11 +14,20 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
+        if numerator == 0 and denominator == 0:
+            self.numerator = 0
+            self.denominator = 0
         # check type of numerator and denominator
         if not isinstance(numerator, int):
             raise TypeError("Numerator must be 'int' ")
         if not isinstance(denominator, int):
             raise TypeError("Denominator must be 'int' ")
+        if isinstance(numerator, bool):
+            raise TypeError("Numerator must be 'int' ")
+        if isinstance(denominator, bool):
+            raise TypeError("Denominator must be 'int' ")
+        
+        # infinity case (1/0), (-1/0)
 
         # 0/0
 
@@ -44,7 +53,7 @@ class Fraction:
         new_deno = self.denominator * frac.denominator
         return Fraction(new_num, new_deno)
     
-    def __sub__(self, frac)
+    def __sub__(self, frac):
         """Return the subtraction of two fractions as a new fraction.
            Use the standard formula  a/b - c/d = (ad-bc)/(b*d)
         """
