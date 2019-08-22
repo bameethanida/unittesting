@@ -68,6 +68,9 @@ class ListUtilTest(unittest.TestCase):
         self.assertListEqual(['q', 'w', ['banana', 'apple', 'orange'], ['python', 'java'], ['hello']], 
         unique(['q', 'w', ['banana', 'apple', 'orange'], ['python', 'java'], ['hello']]))
 
+    def test_multiple_nested_with_duplication_list(self):
+        self.assertListEqual([['b', 'a', 'c'], [5], ['o'], 2], unique([['b', 'a', 'c'], [5], [5], [5], [5], ['o'], 2, [5], ['o'], 2]))
+
     def test_argument_not_a_list(self):
         with self.assertRaises(TypeError):
             unique(-123)
