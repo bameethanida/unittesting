@@ -1,3 +1,5 @@
+from math import gcd
+
 class Fraction:
     """A fraction with a numerator and denominator and arithmetic operations.
 
@@ -12,22 +14,57 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
-        #TODO write this (and remove this TODO comment)
-        pass
+        # check type of numerator and denominator
+        if not isinstance(numerator, int):
+            raise TypeError("Numerator must be 'int' ")
+        if not isinstance(denominator, int):
+            raise TypeError("Denominator must be 'int' ")
 
-    #TODO Write the __add__ method, and remove this TODO comment.
+        # 0/0
+
+        # Fractions are stored in proper form.
+        self.gcd = gcd(numerator, denominator)
+        self.numerator = int(numerator/self.gcd)
+        self.denominator = int(denominator/self.gcd)
+
+    def __str__(self):
+        """Return the string in form of 'a/b' where a is numerator and b is denominator in proper form.
+        """
+        if self.numerator == 0 and self.denominator == 0:
+            return '{0}/{1}'.format(self.numerator, self.denominator)
+        if self.numerator == 0 or self.denominator == 1:
+            return '{0}'.format(int(self.numerator/self.denominator))
+        return '{0}/{1}'.format(self.numerator, self.denominator)
+    
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
            Use the standard formula  a/b + c/d = (ad+bc)/(b*d)
         """
+        new_num = self.numerator * frac.denominator + frac.numerator * self.denominator
+        new_deno = self.denominator * frac.denominator
+        return Fraction(new_num, new_deno)
+    
+    def __sub__(self, frac)
+        """Return the subtraction of two fractions as a new fraction.
+           Use the standard formula  a/b - c/d = (ad-bc)/(b*d)
+        """
+        new_num = self.numerator * frac.denominator - frac.numerator * self.denominator
+        new_deno = self.denominator * frac.denominator
+        return Fraction(new_num, new_deno)
+
+    def __mul__(self, frac):
+        """Return the multiplication of two fractions as a new fraction."""
+        new_num = self.numerator * frac.numerator
+        new_deno = self.denominator * frac.denominator
+        return Fraction(new_num, new_deno)
+    
+    def __gt__(self, frac):
         pass
-
-    #TODO write __mul__ and __str__.  Verify __eq__ works with your code.
-    #Optional have fun and overload other operators such as 
-    # __sub__ for f-g
-    # __gt__  for f > g
-    # __neg__ for -f (negation)
-
+    
+    def __neg__(self, frac):
+        pass
+    
+    
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.
            Fractions are stored in proper form so the internal representation
