@@ -16,9 +16,9 @@ by Thanida Jongarnon.
 | multiple items         |  list with multiple items   |
 | multiple items, with duplication, many orders        |  multiple items list, items in same order   |
 | list with one nested list               | list with one nested list   |
-| list with one nested list with duplication              | list with one nested list   |
+| list with one nested list with duplication              | list with one nested list, items in same order   |
 | list with multiple nested lists           | list with multiple nested lists  |
-| list with multiple nested lists with duplication         | list with multiple nested lists  |
+| list with multiple nested lists with duplication         | list with multiple nested lists, items in same order  |
 | argument not a list        |  throws exception|
 
 ## Test Cases for Fraction
