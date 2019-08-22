@@ -59,11 +59,14 @@ class Fraction:
         return Fraction(new_num, new_deno)
     
     def __gt__(self, frac):
-        pass
+        """Return True if one fraction is greater than the other."""
+        check_self = self.numerator * frac.denominator
+        check_other_frac = frac.numerator * self.denominator
+        return check_self > check_other_frac
     
     def __neg__(self, frac):
-        pass
-    
+        """Return negative value of fraction."""
+        return Fraction(-self.numerator, self.denominator)
     
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.
