@@ -90,7 +90,7 @@ class Fraction:
     def __neg__(self, frac):
         """Return negative value of fraction."""
         return Fraction(-self.numerator, self.denominator)
-    
+     
     def __eq__(self, frac):
         """Two fractions are equal if they have the same value.
            Fractions are stored in proper form so the internal representation
