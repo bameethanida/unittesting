@@ -34,12 +34,12 @@ by Thanida Jongarnon.
 | Test case  (Operations)            |  Expected Result    |
 |------------------------|---------------------|
 | The string representation (`__str__`)|  String of proper fraction     |
-| addition |   The sum of fractions   |
-| subtraction |  The different of fractions    |
-| multiplication|    The product of fractions   |
-| greater than |  `True` if fraction is greater and `False` if not     |
-| negation |  The  contradiction value of fraction (multiple by -1)  |
-| equal to|  `True` if fraction is equal and `False` if not  |
+| Addition |   The sum of fractions   |
+| Subtraction |  The different of fractions    |
+| Multiplication|    The product of fractions   |
+| Greater than |  `True` if fraction is greater and `False` if not     |
+| Negation |  The  contradiction value of fraction (multiple by -1)  |
+| Equal to|  `True` if fraction is equal and `False` if not  |
 
 
 
