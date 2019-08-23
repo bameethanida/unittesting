@@ -26,15 +26,29 @@ class Fraction:
             raise TypeError("Numerator must be 'int' ")
         if isinstance(denominator, bool):
             raise TypeError("Denominator must be 'int' ")
-        
+
         # infinity case (1/0), (-1/0)
-
+        if denominator == 0:
+            if numerator > 0:
+                numerator = 1
+            elif numerator < 0:
+                numerator = -1
+        # minus case
+        elif denominator < 0:
+            if numerator > 0:
+                numerator = - numerator
+            elif numerator < 0:
+                numerator = abs(numerator)
+            denominator = abs(denominator)
         # 0/0
-
+        if numerator == 0 and denominator == 0:
+            self.numerator = 0
+            self.denominator = 0
         # Fractions are stored in proper form.
-        self.gcd = gcd(numerator, denominator)
-        self.numerator = int(numerator/self.gcd)
-        self.denominator = int(denominator/self.gcd)
+        else:
+            self.gcd = gcd(numerator, denominator)
+            self.numerator = int(numerator/self.gcd)
+            self.denominator = int(denominator/self.gcd)
 
     def __str__(self):
         """Return the string in form of 'a/b' where a is numerator and b is denominator in proper form.

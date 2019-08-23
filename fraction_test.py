@@ -28,24 +28,31 @@ class FractionTest(unittest.TestCase):
         with self.assertRaises(TypeError):
             Fraction(True, False)
     
-    # def test_str(self):
-    #     f = Fraction(3, -1)
-    #     self.assertEqual("-3", f.__str__())
-    #     f = Fraction(0, 5)
-    #     self.assertEqual("0", f.__str__())
-    #     f = Fraction(60, 90)
-    #     self.assertEqual("2/3", f.__str__())
-    #     f = Fraction(1500, 60)
-    #     self.assertEqual("25", f.__str__())
-    #     f = Fraction(1500, 90)
-    #     self.assertEqual("50/3", f.__str__())
-    #     f = Fraction(-80, 20)
-    #     self.assertEqual("-4", f.__str__())
-    #     f = Fraction(36, -60)
-    #     self.assertEqual("-3/5", f.__str__())
-    #     # Constructor should provide default denominator = 1
-    #     f = Fraction(99)
-    #     self.assertEqual("99", f.__str__())
+    def test_str(self):
+        f = Fraction(3, -1)
+        self.assertEqual("-3", f.__str__())
+        f = Fraction(0, 5)
+        self.assertEqual("0", f.__str__())
+        f = Fraction(60, 90)
+        self.assertEqual("2/3", f.__str__())
+        f = Fraction(1500, 60)
+        self.assertEqual("25", f.__str__())
+        f = Fraction(1500, 90)
+        self.assertEqual("50/3", f.__str__())
+        f = Fraction(-80, 20)
+        self.assertEqual("-4", f.__str__())
+        f = Fraction(36, -60)
+        self.assertEqual("-3/5", f.__str__())
+        # Constructor should provide default denominator = 1
+        f = Fraction(99)
+        self.assertEqual("99", f.__str__())
+        f = Fraction(0, 0)
+        self.assertEqual("0/0", f.__str__())
+        f = Fraction(1, 0)
+        self.assertEqual("1/0", f.__str__())
+        f = Fraction(-1, 0)
+        self.assertEqual("-1/0", f.__str__())
+
 
 
     # # TODO Write tests for __init__, __eq__, +, *.
@@ -65,3 +72,4 @@ class FractionTest(unittest.TestCase):
     #     self.assertFalse(f.__eq__(h))
     #     #TODO write more tests using other cases.
     #     # Consider special values like 0, 1/0, -1/0
+
