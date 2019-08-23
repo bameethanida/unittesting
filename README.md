@@ -23,28 +23,24 @@ by Thanida Jongarnon.
 
 # Test Cases for Fraction
 
-## Test Cases for `__init__`
 
- Test case              |  Expected Result    |
+
+ Test case (Constructor)         |  Expected Result    |
 |------------------------|---------------------|
 | Both Numerator and Denominator are integer| Fraction(`numerator`, `denominator`) in proper form    |
 | Either Numerator or Denominator are not integer    |    TypeError     |
 
-## Test Cases for `__str__`
 
-| Test case              |  Expected Result    |
+| Test case  (Operations)            |  Expected Result    |
 |------------------------|---------------------|
-|  Both Numerator and Denominator (not 0 or 1) are integer  |    `numerator` / `denominator` in proper form   |
-| Numerator is zero, non-zero int Denominator |      0   |
-|  Non-zero int Numerator, Denominator is 1 |  `numerator`  |
-| Negative int Numerator and Denominator is zero  | -1/0  |
-|  	Positive int Numerator and Denominator is zero  | 1/0  |
-| Numerator and Denominator are zero  | 0/0  |
+| The string representation (`__str__`)|  String of proper fraction     |
+| addition |   The sum of fractions   |
+| subtraction |  The different of fractions    |
+| multiplication|    The product of fractions   |
+| greater than |  `True` if fraction is greater and `False` if not     |
+| negation |  The  contradiction value of fraction (multiple by -1)  |
+| equal to|  `True` if fraction is equal and `False` if not  |
 
-## Test Cases for `__add__`
-## Test Cases for `__sub__`
-## Test Cases for `__mul__`
-## Test Cases for `__gt__`
-## Test Cases for `__neg__`
-## Test Cases for `__eq__`
+
+
 
