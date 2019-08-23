@@ -87,7 +87,7 @@ class Fraction:
         check_other_frac = frac.numerator * self.denominator
         return check_self > check_other_frac
     
-    def __neg__(self, frac):
+    def __neg__(self):
         """Return negative value of fraction."""
         return Fraction(-self.numerator, self.denominator)
      
