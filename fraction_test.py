@@ -58,13 +58,23 @@ class FractionTest(unittest.TestCase):
         self.assertEqual("-1/0", f.__str__())
 
     def test_add(self):
-        """
-        3/4 = 2/3 + 1/12
-        """
-        self.assertEqual(Fraction(3,4), Fraction(1,12)+Fraction(2,3))
+        self.assertEqual(Fraction(3, 4), Fraction(1, 12) + Fraction(2, 3))
+        self.assertEqual(Fraction(5, 7), Fraction(5, 7) + Fraction(0))
+        self.assertEqual(Fraction(0, 0), Fraction(0, 0) + Fraction(1, 2))
+        self.assertEqual(Fraction(-3, 10), Fraction(-1, 2) + Fraction(1, 5))
+        self.assertEqual(Fraction(1, 4), Fraction(5, 6) + Fraction(7, -12))
+        self.assertEqual(Fraction(-5, 6), Fraction(-1, 2) + Fraction(-1, 3))
+        self.assertEqual(Fraction(0, 0), Fraction(1, 0) + Fraction(-1, 0))
 
     def test_sub(self):
-        pass
+        self.assertEqual(Fraction(7, 20), Fraction(3, 4) - Fraction(2, 5))
+        self.assertEqual(Fraction(5, 7), Fraction(5, 7) - Fraction(0))
+        self.assertEqual(Fraction(-7, 19), Fraction(0) - Fraction(7, 19))
+        self.assertEqual(Fraction(0, 0), Fraction(0, 0) - Fraction(1, 2))
+        self.assertEqual(Fraction(-19, 20), Fraction(-3, 4) - Fraction(1, 5))
+        self.assertEqual(Fraction(5, 6), Fraction(1, 2) - Fraction(1, -3))
+        self.assertEqual(Fraction(-1, 6), Fraction(-1, 2) - Fraction(-1, 3))
+        self.assertEqual(Fraction(0, 0), Fraction(1, 0) - Fraction(-1, 0))
     
     def test_mul(self):
         pass
@@ -85,4 +95,3 @@ class FractionTest(unittest.TestCase):
         self.assertFalse(f.__eq__(h))
         #TODO write more tests using other cases.
         # Consider special values like 0, 1/0, -1/0
-        
