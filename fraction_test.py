@@ -58,39 +58,58 @@ class FractionTest(unittest.TestCase):
         self.assertEqual("-1/0", f.__str__())
 
     def test_add(self):
+        # both numerator and denominator are positive
         self.assertEqual(Fraction(3, 4), Fraction(1, 12) + Fraction(2, 3))
-        self.assertEqual(Fraction(5, 7), Fraction(5, 7) + Fraction(0))
-        self.assertEqual(Fraction(0, 0), Fraction(0, 0) + Fraction(1, 2))
+        # either numerator or denominator is negative
         self.assertEqual(Fraction(-3, 10), Fraction(-1, 2) + Fraction(1, 5))
         self.assertEqual(Fraction(1, 4), Fraction(5, 6) + Fraction(7, -12))
         self.assertEqual(Fraction(-5, 6), Fraction(-1, 2) + Fraction(-1, 3))
+        # 0
+        self.assertEqual(Fraction(5, 7), Fraction(5, 7) + Fraction(0))
+        # 0/0
+        self.assertEqual(Fraction(0, 0), Fraction(0, 0) + Fraction(1, 2))
+        # 1/0 or -1/0
         self.assertEqual(Fraction(0, 0), Fraction(1, 0) + Fraction(-1, 0))
 
     def test_sub(self):
+        # both numerator and denominator are positive
         self.assertEqual(Fraction(7, 20), Fraction(3, 4) - Fraction(2, 5))
-        self.assertEqual(Fraction(5, 7), Fraction(5, 7) - Fraction(0))
-        self.assertEqual(Fraction(-7, 19), Fraction(0) - Fraction(7, 19))
-        self.assertEqual(Fraction(0, 0), Fraction(0, 0) - Fraction(1, 2))
+        # either numerator or denominator is negative
         self.assertEqual(Fraction(-19, 20), Fraction(-3, 4) - Fraction(1, 5))
         self.assertEqual(Fraction(5, 6), Fraction(1, 2) - Fraction(1, -3))
         self.assertEqual(Fraction(-1, 6), Fraction(-1, 2) - Fraction(-1, 3))
+        # 0
+        self.assertEqual(Fraction(5, 7), Fraction(5, 7) - Fraction(0))
+        self.assertEqual(Fraction(-7, 19), Fraction(0) - Fraction(7, 19))
+        # 0/0
+        self.assertEqual(Fraction(0, 0), Fraction(0, 0) - Fraction(1, 2))
+        # 1/0 or -1/0
         self.assertEqual(Fraction(0, 0), Fraction(1, 0) - Fraction(-1, 0))
 
     def test_mul(self):
-        self.assertEqual(Fraction(0, 0), Fraction(0, 0) * Fraction(2, 5))
+        # both numerator and denominator are positive
+        self.assertEqual(Fraction(1, 12), Fraction(1, 3) * Fraction(1, 4))
+        # either numerator or denominator is negative
+        self.assertEqual(Fraction(-3, 20), Fraction(-3, 4) * Fraction(1, 5))
+        self.assertEqual(Fraction(1, -6), Fraction(1, 2) * Fraction(1, -3))
+        self.assertEqual(Fraction(1, 6), Fraction(-1, 2) * Fraction(-1, 3))
+        # 0
         self.assertEqual(Fraction(0), Fraction(5, 7) * Fraction(0))
-        # self.assertEqual(Fraction(), Fraction(0) * Fraction(7, 19))
-        # self.assertEqual(Fraction(), Fraction(0, 0) * Fraction(1, 2))
-        # self.assertEqual(Fraction(), Fraction(-3, 4) * Fraction(1, 5))
-        # self.assertEqual(Fraction(), Fraction(1, 2) * Fraction(1, -3))
-        # self.assertEqual(Fraction(), Fraction(-1, 2) * Fraction(-1, 3))
-        # self.assertEqual(Fraction(), Fraction(1, 0) * Fraction(-1, 0))
+        self.assertEqual(Fraction(0), Fraction(0) * Fraction(7, 19))
+        # 0/0
+        self.assertEqual(Fraction(0, 0), Fraction(0, 0) * Fraction(2, 5))
+
     
     def test_gt(self):
-        pass
+        self.assertTrue(Fraction(1, 2) > Fraction(1, 5))
+        self.assertFalse(Fraction(-1, 3) > Fraction(-1, 7))
+        self.assertFalse(Fraction(1, 2) > Fraction(1, 2))
     
     def test_neg(self):
-        pass
+        self.assertEqual(Fraction(0), -Fraction(0))
+        self.assertEqual(Fraction(-1, 0), -Fraction(1, 0))
+        self.assertEqual(Fraction(1,2), -Fraction(1,-2))
+        self.assertEqual(Fraction(-3,6), -Fraction(1,2))
     
     def test_eq(self):
         zero = Fraction(0)
@@ -103,7 +122,6 @@ class FractionTest(unittest.TestCase):
         i = Fraction(1, 0)
         j = Fraction(-1, 0)
         k = Fraction(15, 15)
-
         self.assertTrue(f == g)
         self.assertTrue(f.__eq__(g))  # same thing
         self.assertFalse(f == h)
@@ -116,4 +134,3 @@ class FractionTest(unittest.TestCase):
         self.assertFalse(zero.__eq__(i))
         self.assertFalse(zero.__eq__(j))
         self.assertFalse(f.__eq__(i))
-        
