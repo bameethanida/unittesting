@@ -1,4 +1,5 @@
-# Unit Testing Assignment
+# Unit Testing Assignment    
+[![Build Status](https://travis-ci.com/bameethanida/unittesting-bameethanida.svg?branch=master)](https://travis-ci.com/bameethanida/unittesting-bameethanida)
 
 by Thanida Jongarnon.
 
