@@ -15,8 +15,7 @@ install:
 script: 
   - python -m unittest discover -p "*_test.py"
   - coverage run fraction_test.py
-  
-
+  - coverage report
 
 after_success:
   - codecov

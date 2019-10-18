@@ -1,6 +1,6 @@
 # Unit Testing Assignment    
-[![Build Status](https://travis-ci.com/bameethanida/unittesting.svg?branch=master)](https://travis-ci.com/bameethanida/unittesting)
-
+[![Build Status](https://travis-ci.com/bameethanida/unittesting.svg?branch=master)](https://travis-ci.com/bameethanida/unittesting)    
+[![codecov](https://codecov.io/gh/bameethanida/unittesting/branch/master/graph/badge.svg)](https://codecov.io/gh/bameethanida/unittesting)    
 by Thanida Jongarnon.
 
 
